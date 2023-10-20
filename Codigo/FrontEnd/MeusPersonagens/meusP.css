@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700&family=Poppins&display=swap');
+
+
+body{
+  background: linear-gradient(90deg, #464646 0%, #282828 100%);
+  font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: #420000;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  margin-left: 50%;
+  height: 60px; /* Ajuste a altura da imagem conforme necessário */
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: rgb(255, 179, 179); 
+  }
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: flex;
+  }
+
+  .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+  }
+
+  .menu.active {
+      display: flex;
+  }
+
+  .menu li {
+      margin: 10px 0;
+  }
+}

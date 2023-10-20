@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Ficha do personagem</title>
+  </head>
+  <body>
+    <h1 class="title">Ficha de personagem</h1>
+    
+    <div id="lifeModal" class="modal with-input">
+      <div class="modal-content">
+        <h2>MODIFICAR VIDA</h2>
+        <hr />
+        <form class="formModal" id="changeLife">
+          <h3>Atual</h3>
+          <input type="number" name="current" id="lifeCurrent" min="0" />
+          <h3>Máximo</h3>
+          <input type="number" name="max" id="lifeMax" min="0" />
+          <input type="submit" value="Salvar" />
+        </form>
+      </div>
+    </div>
+
+    <div id="sanityModal" class="modal with-input">
+      <div class="modal-content">
+        <h2>MODIFICAR SANIDADE</h2>
+        <hr />
+        <form class="formModal" id="changeSanity">
+          <h3>Atual</h3>
+          <input
+            type="number"
+            name="sanityCurrent"
+            id="sanityCurrent"
+            min="0"
+          />
+          <h3>Máximo</h3>
+          <input type="number" name="sanityMax" id="sanityMax" min="0" />
+          <input type="submit" value="Salvar" />
+        </form>
+      </div>
+    </div>
+  
+ <!-- ----------------BOX 1-------------------- -->
+    <div class="container">
+      <div class="details border">
+        <h2 class="grid-title">DETALHES PESSOAIS</h2>
+        <hr />
+
+        <div class="inputs">
+          <h4>Nome</h4>
+          <input type="text" name="name" id="name" value="" />
+          <h4>Jogador</h4>
+          <input type="text" name="player" id="player" value="" />
+          <h4>Ocupação</h4>
+          <input type="text" name="occupation" id="occupation" value="" />
+          <h4>Nível</h4>
+          <input type="text" name="age" id="age" value="" />
+          <h4>Sexo</h4>
+          <select id="sex" name="sex">
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+            <option value="other">Outros</option>
+          </select>
+          <h4>Local de nascimento</h4>
+          <input type="text" name="birthplace" id="birthplace" value="" />
+          <h4>Local de residência</h4>
+          <input type="text" name="residence" id="residence" value="" />
+          <br/>
+          <h2 class="grid-title">Classe</h2>
+          <hr />
+          
+          <h4>Nome</h4>
+          <select id="sex" name="sex">
+            <option value="arqueiro">Arqueiro</option>
+            <option value="mago">Mago</option>
+            <option value="other">Outros</option>
+          </select>
+          <h4>Habilidades</h4>
+          <input type="text" name="birthplace" id="birthplace" value="" />
+          <br/>
+          <h2 class="grid-title">Magia</h2>
+          <hr />
+          <h4>Nome</h4>
+          <select id="sex" name="sex">
+            <option value="arqueiro">Arqueiro</option>
+            <option value="mago">Mago</option>
+            <option value="other">Outros</option>
+          </select>
+          <h4>Mana</h4>
+          <input type="number" name="mana" id="mana value=" />
+          <h4>Descrição</h4>
+          <input type="text" name="descricao" id="descricao" value="" />
+          
+          
+          <div class="inputs2">
+            <div id="subInput">
+              <h4>Força</h4>
+              <input type="number" name="strength" id="strength" value="" />
+              <h4>Agilidade</h4>
+              <input
+                type="text"
+                name="constitution"
+                id="constitution"
+                value=""
+              />
+            </div>
+            <div id="subInput">
+              <h4>Inteligencia</h4>
+              <input type="text" name="size" id="peso" value="" />
+              <h4>Reflexos</h4>
+              <input type="number" name="dexterity" id="velMax" value="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="character">
+        <div class="bars">
+          <h4>Vida</h4>
+          <div class="bar">
+            <div class="lifeBar" style="width: 0%">
+              <p class="barcount" id="lifeCount"></p>
+            </div>
+          </div>
+        
+
+          <h4>Sanidade</h4>
+          <div class="sanity">
+            <div class="contentSanityBar">
+              <div class="sanityBar" style="width: 0%">
+                <p class="barcount" id="sanityCount"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- ----------------BOX sobre-------------------- -->
+
+      <div class="sobre border">
+        <h2 class="grid-title">SOBRE</h2>
+        <hr />
+        <div id="areas">
+          <div class="txtareadiv">
+            <p>Inventário</p>
+            <textarea name="about" id="inv" cols="30" rows="10"></textarea>
+          </div>
+          <div class="txtareadiv">
+            <p>Aparência</p>
+            <textarea name="" id="aparencia" cols="30" rows="10"></textarea>
+          </div>
+          <div class="txtareadiv">
+            <p>História</p>
+            <textarea name="about" id="historia" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="save">Salvar</button>
+    </div>
+    <script src="characterSheet.js"></script>
+  </body>
+</html>

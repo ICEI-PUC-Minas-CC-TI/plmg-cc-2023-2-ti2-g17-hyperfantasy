@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/4c0165cb3d.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <ul id="menuItens" class="menuItens">
+        <img id="logo"src="img/Design_sem_nome-removebg-preview.png" alt="Logo do site" />
+        <li><a class="active" href="index.html" data-item="Home">Home</a></li>
+        <li><a href="" data-item="Criar">Criar Personagem</a></li>
+        <li><a href="" data-item="Meus">Meus Personagens</a></li>
+        <li><a href="sobre.html" data-item="Jogos">Sobre Nós</a></li>
+        <a href="#" id="close"><p>X</p></a>
+
+      </ul>
+      <div id="mobile">
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </header>
+
+    <section id="Temadasemana">
+      <h1>O RPG para todos</h1>
+      
+    </section>
+
+    <section id="video">
+      <div id="ytdiv">
+        <h3>RPG para iniciantes</h3>
+        <iframe
+          class="responsive-iframe"
+          width="735"
+          height="413"
+      src="https://www.youtube.com/watch?v=PJco4j1vYso&pp=ygUTcnBnIHBhcmEgaW5pY2lhbnRlcw%3D%3D"
+          title="9 tecnologias extraordinárias criadas por mulheres - TecMundo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div id="texto1">
+        <h5>
+          RPG, ou Role-Playing Game (Jogo de Interpretação de Papéis, em tradução livre), é um gênero de jogo que se destaca por sua ênfase na narrativa e na interpretação de personagens. Nesse tipo de jogo, os participantes assumem papéis fictícios e colaboram para criar uma história coletiva. Cada jogador encarna um personagem com características únicas, motivações e habilidades, e interage com outros jogadores e com um mestre do jogo, que desempenha o papel de narrador e árbitro das regras. O objetivo principal do RPG é a imersão em um mundo imaginário, onde as escolhas dos personagens afetam o desenrolar da trama.
+        </h5>
+      </div>
+      <section class="block1">
+        <div id="texto2">
+          <h3>Hístoria do RPG</h3>
+
+          <h5>
+            A história do RPG (Role-Playing Game) é fascinante e remonta aos anos 1970. O gênero foi criado por Gary Gygax e Dave Arneson com o lançamento do jogo "Dungeons & Dragons" (D&D), que rapidamente se tornou icônico. Inspirado por jogos de estratégia e literatura de fantasia, o D&D introduziu a ideia de que os jogadores poderiam interpretar papéis como heróis em um mundo imaginário. O sistema de regras complexas e os dados de múltiplas faces ajudaram a moldar a mecânica dos RPGs, e o jogo logo se espalhou, influenciando inúmeras outras criações. Ao longo das décadas, os RPGs evoluíram, incorporando uma variedade de cenários, sistemas e plataformas, desde os tradicionais RPGs de mesa até jogos de computador e MMOs. A história do RPG é uma jornada de criatividade, colaboração e imersão em mundos fictícios que continua a inspirar jogadores e narradores em todo o mundo.
+          </h5>
+        </div>
+        <div id="imagem2">
+          <img src="/download (3).jpg" alt="img 1" />
+        </div>
+      </section>
+
+      <div id="imagem3">
+        <img src="/6.jpg" alt="img2" />
+      </div>
+      <div id="texto3">
+        <h4>Playlist RPG</h4>
+        <h5>
+          Clique na Imagem ao lado para ser redirecionado para uma playlist temática da era medieval.
+        </h5>
+      </div>
+    </section>
+  </body>
+ 
+</html>
