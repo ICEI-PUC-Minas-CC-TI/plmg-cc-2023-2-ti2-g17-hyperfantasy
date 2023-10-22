@@ -1,8 +1,0 @@
-package br.com.teste.projeto.controller;
-
-public class UsuarioController {
-	@GetMapping("/usuarios")
-	public String texto{
-		return "Acessando a api";
-	}
-}
