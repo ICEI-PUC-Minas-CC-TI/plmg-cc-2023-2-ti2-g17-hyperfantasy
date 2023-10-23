@@ -3,6 +3,7 @@ package ti2.cadastro.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,22 +29,59 @@ public class UsuarioController  {
 	public List <Usuario> listaUsuarios() {
 		return (List<Usuario>)dao.findAll();
 	}
-	@GetMapping("/{id}")
-    public ResponseEntity<Usuario> getUsuarioById(@PathVariable Integer id) {
-        java.util.Optional<Usuario> usuario = dao.findById(id);
-        if (usuario.isPresent()) {
-            return ResponseEntity.ok(usuario.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 	
-	@PostMapping
-	public Usuario criarUsuario(@RequestBody Usuario usuario){
-		Usuario usuarioNovo=dao.save(usuario);
-		return usuarioNovo;
+	@GetMapping("/{username}")
+	public ResponseEntity<Usuario> getUsuarioByUsername(@PathVariable String username) {
+	    java.util.Optional<Usuario> usuario = dao.findByUsername(username);
+	    if (usuario.isPresent()) {
+	        return ResponseEntity.ok(usuario.get());
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
 	}
-	
+	@PostMapping("/login")
+	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario) {
+	    
+	    if (autenticar(usuario)) {
+	        // Autenticação bem-sucedida
+	        return ResponseEntity.ok(usuario);
+	    } else {
+	        // Autenticação falhou
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(usuario);
+	    }
+	}
+	@PostMapping
+	public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario){
+		if(usuarioJaExiste(usuario.getUsername())){
+			 return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+		}
+		else {
+			Usuario usuarioNovo=dao.save(usuario);
+			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioNovo);
+		}
+	}
+	private boolean usuarioJaExiste(String username) {
+		boolean existe=false;
+	    List<Usuario> aux=listaUsuarios();
+	    for(int i=0;i<aux.size();i++) {
+	    	if(aux.get(i).getUsername().equals(username)) {
+	    		existe=true;
+	    		break;
+	    	}
+	    }
+	    return existe; 
+	}
+	private boolean autenticar(Usuario usuario) {
+		boolean sucesso=false;
+	    List<Usuario> aux=listaUsuarios();
+	    for(int i=0;i<aux.size();i++) {
+	    	if(aux.get(i).getUsername().equals(usuario.getUsername())&&aux.get(i).getSenha().equals(usuario.getSenha())) {
+	    		sucesso=true;
+	    		break;
+	    	}
+	    }
+	    return sucesso; 
+	}
 	@PutMapping("/{id}")
     public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Integer id, @RequestBody Usuario usuarioAtualizado) {
         if (dao.existsById(id)) {
