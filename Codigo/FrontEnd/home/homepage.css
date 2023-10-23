@@ -21,7 +21,8 @@ html {
   display: none;
   align-items: center;
 }
-#sobre{
+
+#sobre {
   display: flex;
   justify-content: center;
   border-top: 5%;
@@ -29,7 +30,7 @@ html {
 
 /* Barra principal*/
 header {
-  background-color:  #420000;
+  background-color: #420000;
   color: #fff;
   padding: 10px;
 }
@@ -206,6 +207,7 @@ header {
   font-weight: bold;
   margin-top: 40px;
 }
+
 #listajogo {
   margin-left: 34%;
   display: inline-block;
@@ -267,7 +269,7 @@ header {
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color:#ffffff;
+  color: #ffffff;
   background: linear-gradient(90deg, #464646 0%, #282828 100%);
 }
 
@@ -398,16 +400,19 @@ body {
 #imagenard {
   display: inline-block;
 }
+
 .quiz {
   display: inline-block;
   justify-content: center;
   align-items: center;
 }
+
 #quizmulheres {
   display: inline-block;
   justify-content: center;
   align-items: center;
 }
+
 #think {
   display: flex;
   justify-content: space-around;
@@ -426,6 +431,7 @@ body {
   #texto2 {
     width: 900px;
   }
+
   #info {
     margin-bottom: 50%;
   }
@@ -435,14 +441,17 @@ body {
     width: 1000px;
   }
 }
+
 @media (max-width: 576px) {
   #video {
     margin-left: 0%;
     margin-top: 50px;
   }
+
   #imagenard {
     display: flex;
   }
+
   #imagenard img {
     height: 200px;
     display: flex;
@@ -451,16 +460,20 @@ body {
   #Temadasemana {
     margin-left: -0%;
   }
-  #video h5{
+
+  #video h5 {
     margin-right: 2%;
     margin-left: 18%;
   }
-  #video h3{
-    margin-left:-0%;
+
+  #video h3 {
+    margin-left: -0%;
   }
-  #ytdiv{
+
+  #ytdiv {
     margin-left: 10%;
   }
+
   #imagenard {
     display: flex;
   }
@@ -486,7 +499,7 @@ body {
     width: 350px;
   }
 
-  #texto1 h5{
+  #texto1 h5 {
     margin-left: 10%;
   }
 
@@ -495,7 +508,7 @@ body {
     width: 300px;
   }
 
-  #texto2 h5{
+  #texto2 h5 {
     margin-left: 8%;
   }
 
@@ -579,11 +592,12 @@ body {
     height: auto;
   }
 
-  #texto3 h4{
+  #texto3 h4 {
     margin-left: 15%;
     width: 300px;
   }
-  #texto3 h5{
+
+  #texto3 h5 {
     margin-left: 14%;
     width: 300px;
     text-align: justify;

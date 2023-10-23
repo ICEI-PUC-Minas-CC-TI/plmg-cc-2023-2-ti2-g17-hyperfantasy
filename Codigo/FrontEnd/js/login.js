@@ -1,61 +1,76 @@
-let btn = document.querySelector('.fa-eye')
- 
-btn.addEventListener('click', ()=>{
-  let inputSenha = document.querySelector('#senha')
-  
-  if(inputSenha.getAttribute('type') == 'password'){
-    inputSenha.setAttribute('type', 'text')
-  } else {
-    inputSenha.setAttribute('type', 'password')
-  }
-})
+const formulario = document.querySelector("form");
+const Iusername = document.querySelector(".username");
+const Isenha = document.querySelector(".senha");
+let detalhesUsernameElement;
+let detalhesSenhaElement;
 
-function entrar(){
-  let usuario = document.querySelector('#usuario')
-  let userLabel = document.querySelector('#userLabel')
-  
-  let senha = document.querySelector('#senha')
-  let senhaLabel = document.querySelector('#senhaLabel')
-  
-  let msgError = document.querySelector('#msgError')
-  let listaUser = []
-  
-  let userValid = {
-    nome: '',
-    user: '',
-    senha: ''
-  }
-  
-  listaUser = JSON.parse(localStorage.getItem('listaUser'))
-  
-  listaUser.forEach((item) => {
-    if(usuario.value == item.userCad && senha.value == item.senhaCad){
-       
-      userValid = {
-         nome: item.nomeCad,
-         user: item.userCad,
-         senha: item.senhaCad
-       }
-      
-    }
-  })
-   
-  if(usuario.value == userValid.user && senha.value == userValid.senha){
-    window.location.href = '/home/index3'
-    
-    let mathRandom = Math.random().toString(16).substr(2)
-    let token = mathRandom + mathRandom
-    
-    localStorage.setItem('token', token)
-    localStorage.setItem('userLogado', JSON.stringify(userValid))
-  } else {
-    userLabel.setAttribute('style', 'color: red')
-    usuario.setAttribute('style', 'border-color: red')
-    senhaLabel.setAttribute('style', 'color: red')
-    senha.setAttribute('style', 'border-color: red')
-    msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = 'Usuário ou senha incorretos'
-    usuario.focus()
-  }
-  
+function limpar() {
+  Iusername.value = "";
+  Isenha.value = "";
 }
+
+function loadExternalHTML() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'MeusPersonagens/index2.html', true);
+
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xhr.responseText, 'text/html');
+      // Verifique se os elementos existem no documento antes de atribuir valores
+      var detalhesUsername = doc.getElementById('detalhes-username');
+      var detalhesSenha = doc.getElementById('detalhes-senha');
+
+      if (detalhesUsername && detalhesSenha) {
+        detalhesUsername.value = Iusername;
+        detalhesSenha.value = Isenha;
+      } else {
+        console.error('Os elementos "detalhes-username" e/ou "detalhes-senha" não foram encontrados no documento.');
+      }
+    } else {
+      console.error('Erro ao carregar o arquivo externo.');
+    }
+  };
+  xhr.send();
+}
+
+function login() {
+  fetch("http://localhost:8080/usuarios/login", {
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: Iusername.value,
+      senha: Isenha.value,
+    })
+  })
+    .then(function (res) {
+      if (res.ok) {
+        return res.json();
+      } else if (res.status === 401) {
+        document.getElementById('mensagemErroU').style.display = 'block';
+        return res.text().then(function (errorText) {
+          throw new Error('Falha na autenticação');
+        });
+      } else {
+        throw new Error('Erro');
+      }
+    })
+    .then(function (data) {
+      console.log('Sucesso', data);
+      loadExternalHTML();
+      window.location.href = '/home/index3.html';
+    })
+    .catch(function (error) {
+      console.error('Erro ao fazer login', error);
+    });
+}
+
+formulario.addEventListener('submit', function (event) {
+  event.preventDefault();
+  login();
+  limpar();
+  document.getElementById('mensagemErroU').style.display = 'none';
+});

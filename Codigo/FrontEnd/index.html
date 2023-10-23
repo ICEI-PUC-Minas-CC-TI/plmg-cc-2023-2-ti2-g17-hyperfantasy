@@ -16,8 +16,6 @@
               <a href="" class="logo">
                 <img src="/images/dado.png" alt="Logo da empresa">
             </a>
-               
-
           </div>
         </nav>
       </div>
@@ -30,20 +28,20 @@
 
         <div id="msgError"></div>
 
-        <div class="label-float">
-          <input type="text" class="username" name ="username" paceholder="" required />
-          <label id="userLabel" for="usuario">Usuario</label>
-        </div>
-
-        <div class="label-float">
-          <input type="text" class="senha" name ="senha" paceholder="" required />
-          <label id="senhaLabel" for="senha">Senha</label>
-          <i class="fa fa-eye" aria-hidden="true"></i>
-        </div>
-        <br/> 
-        <div class="justify-center">
-          <button onclick="entrar()">Entrar</button>
-        </div>
+        <form action="">
+          <div class="label-float">
+            <input type="text" class="username" placeholder="Username">
+          </div>
+          <div class="label-float">
+            <input type="password" class="senha" placeholder="Senha">
+          
+          </div>
+          <div id="mensagemErroU" style="color: rgb(255, 185, 185); display: none;">Falha na autenticação!</div>
+          <div class="justify-center">
+          
+            <button onclick="login()">Entrar</button>
+          </div>
+        </form>
 
         <div class="justify-center">
           <br/> 
@@ -57,7 +55,7 @@
         </p>
       </div>
     </div>
- 
+
     <script src="js/login.js"></script>
   </body>
 </html>

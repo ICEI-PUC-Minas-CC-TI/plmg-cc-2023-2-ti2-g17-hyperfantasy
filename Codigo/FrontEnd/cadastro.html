@@ -31,10 +31,15 @@
           <input type="text" class="username" placeholder="Username">
         </div>
         <div class="label-float">
-          <input type="text" class="senha" placeholder="Senha">
+          <input type="password" class="senha" placeholder="Senha">
         </div>
-        
+        <div class="label-float">
+          <input type="password" class="confirmar-senha" id="confirmarSenha" placeholder="Confirmar Senha">
+      </div>
+      <div id="mensagemErro" style="color: rgb(255, 185, 185); display: none;">As senhas não coincidem!</div>
+      <div id="mensagemErroU" style="color: rgb(255, 185, 185); display: none;">Username indisponível!</div>
         <div class="justify-center">
+          
           <button onclick="cadastrar()">Cadastrar</button>
         </div>
       </form>
