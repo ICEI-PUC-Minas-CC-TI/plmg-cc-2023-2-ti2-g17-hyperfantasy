@@ -82,17 +82,24 @@ public class UsuarioController  {
 	    }
 	    return sucesso; 
 	}
-	@PutMapping("/{id}")
-    public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Integer id, @RequestBody Usuario usuarioAtualizado) {
-        if (dao.existsById(id)) {
-            usuarioAtualizado.setId(id);
-         
-            Usuario usuarioAtualizadoEntity = dao.save(usuarioAtualizado);
-            return ResponseEntity.ok(usuarioAtualizadoEntity);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+	@PutMapping("/{username}")
+	public ResponseEntity<Usuario> atualizarUsuario(@PathVariable String username, @RequestBody Usuario usuarioAtualizado) {
+	    List<Usuario> aux = listaUsuarios();
+	    int id = -1;
+	    for (int i = 0; i < aux.size(); i++) {
+	        if (aux.get(i).getUsername().equals(username)) {
+	            id = aux.get(i).getId();
+	            break;
+	        }
+	    }
+	    if (dao.existsById(id)) {
+	        usuarioAtualizado.setId(id);
+	        Usuario usuarioAtualizadoEntity = dao.save(usuarioAtualizado);
+	        return ResponseEntity.ok(usuarioAtualizadoEntity);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deletarUsuario(@PathVariable Integer id) {

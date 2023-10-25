@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <script src="https://kit.fontawesome.com/4c0165cb3d.js"></script>
+  <script src="meusP.js"></script>
   <link href="meusP.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -26,20 +26,29 @@
     </div>
   </header>
   <br/>  <br/>
-  <h1 id="meus">Meus Personagens</h1>
-  <div>
-    <h2>Detalhes do Usuário</h2>
-    <div>
-        <strong>Username:</strong>
-        <span id="detalhes-username"></span>
-    </div>
-    <div>
-        <strong>Senha:</strong>
-        <span id="detalhes-senha"></span>
-    </div>
+  <h1 id="meus">Detalhes da conta</h1>
+  <div class="account-box">
+    <p>Username:  <span id="nomeDeUsuario"class="grifado"></span></p>
    
-</div>
+    <div class="account-details">
+      <button id="alterarSenhaBtn"style="display: block;">Alterar Senha</button>
+      <div id="alterarSenhaForm" style="display: none;">
+        <form>
+          <label for="novaSenha">Nova Senha:</label>
+          <input type="password" id="novaSenha" name="novaSenha">
+          <button id="salvarSenhaBtn">Salvar Senha</button>
+         
+        </form>
+      </div>
+     
 
+    </div>
+    <div id="mensagem" style="color: rgb(185, 255, 193); display: none;">Senha alterada com sucesso!</div>
+  </div>
+  <br/><br/>
+    <h1 id="meus">Personagens Vinculados</h1>
+    
+  
 </body>
 
 </html>

@@ -16,11 +16,33 @@ html {
   box-sizing: border-box;
   background: linear-gradient(90deg, #464646 0%, #282828 100%);
 }
-.sobrenos{
-  margin: 5%;
-  display: flex box;
-  justify-content: center;
+.grifado {
+  text-decoration: underline;
 }
+
+.account-box {
+  border: 1px solid #a2a2a21b;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #a2a2a21b;
+  max-width: 30%;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.account-details {
+  margin-top: 20px;
+}
+
+#nomeDeUsuario {
+  font-weight: bold;
+  color: #ffffff; /* ou a cor desejada */
+}
+
 #mobile {
   display: none;
   align-items: center;
@@ -610,4 +632,5 @@ body {
     width: 300px;
     text-align: justify;
   }
+  
 }
