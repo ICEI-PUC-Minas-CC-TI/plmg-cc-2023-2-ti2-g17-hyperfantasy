@@ -32,6 +32,7 @@
    
     <div class="account-details">
       <button id="alterarSenhaBtn"style="display: block;">Alterar Senha</button>
+      <button id="deletarContaBtn">Deletar conta</button>
       <div id="alterarSenhaForm" style="display: none;">
         <form>
           <label for="novaSenha">Nova Senha:</label>
@@ -40,14 +41,25 @@
          
         </form>
       </div>
-     
-
     </div>
     <div id="mensagem" style="color: rgb(185, 255, 193); display: none;">Senha alterada com sucesso!</div>
+    <div id="deletarContaForm" style="display: none;">
+      
+      <form>
+        <label for="confimarSenha">Digite sua senha:</label>
+        <input type="password" class="confirmarSenha">
+        <button id="confirmarBtn">confima Senha</button>
+        <div id="mensagemSenhaIncorreta" style="color: rgb(255, 193, 185); display: none;">Senha incorreta!</div>
+      </form>
+    </div>
+    
+
+  </div>
+   
   </div>
   <br/><br/>
     <h1 id="meus">Personagens Vinculados</h1>
-    
+    <div id="personagens-container"></div>
   
 </body>
 

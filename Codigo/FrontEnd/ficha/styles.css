@@ -26,7 +26,26 @@ hr {
     margin-right: auto;
     margin-bottom: 10px;
 }
-
+.containerrr {
+    align-items: center;
+   
+  }
+  
+  
+  #salvar {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  #salvar:hover {
+    background-color: #45a049;
+  }
+  
 h1 {
     text-align: center;
 }

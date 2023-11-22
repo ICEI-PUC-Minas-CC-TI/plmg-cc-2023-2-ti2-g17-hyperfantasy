@@ -1,6 +1,7 @@
 package ti2.cadastro.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -101,16 +102,17 @@ public class UsuarioController  {
 	    }
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deletarUsuario(@PathVariable Integer id) {
-		if (dao.existsById(id)) {
-		    dao.deleteById(id);
-		    
-		    dao.deleteById(id);
-		   
-		    return ResponseEntity.noContent().build();
-	    }        
-		else return ResponseEntity.notFound().build();
+	@DeleteMapping("/excluir/{username}")
+	public ResponseEntity<Void> deletarUsuario(@PathVariable String username) {
+	    
+	    Optional<Usuario> usuarioOptional = dao.findByUsername(username);
+
+	    if (usuarioOptional.isPresent()) {
+	        dao.delete(usuarioOptional.get());
+	        return ResponseEntity.noContent().build();
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
 	}
 
 }

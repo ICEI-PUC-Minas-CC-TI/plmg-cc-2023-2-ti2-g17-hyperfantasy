@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="/ficha/styles.css" />
+
+    <title>Ficha do personagem</title>
+  </head>
+  <body>
+    <h1 class="title">Ficha de personagem</h1>
+    <form action="">
+      <div class="container">
+        <div class="details border">
+          <h2 class="grid-title">DETALHES PESSOAIS</h2>
+          <hr />
+  
+          <div class="inputs">
+            <h4>Jogador</h4>
+            <input type="text" id="jogador" />
+            <h4>Nome</h4>
+            <input type="text" id="nome" />
+            <h4>Ocupação</h4>
+            <input type="text" id="ocupacao" />
+            <h4>Nível</h4>
+            <input type="number" id="nivel" />
+            <h4>Sexo</h4>
+            <input type="text" id="sexo" />
+            <h4>Local de nascimento</h4>
+            <input type="text" id="lNascimento" />
+            <h4>Local de residência</h4>
+            <input type="text" id="lResidencia" />
+            <br/>
+            <h2 class="grid-title">Classe</h2>
+            <hr />
+            
+            <h4>Nome</h4>
+            <input type="text" id="nomeC" />
+
+            <h4>Habilidades</h4>
+            <input type="text" id="habilidade" />
+            <br/>
+            <h2 class="grid-title">Magia</h2>
+            <hr />
+            <h4>Nome</h4>
+
+            <input type="text" id="nomeM" />
+            <h4>Mana</h4>
+            <input type="number" id="mana" />
+            <h4>Descrição</h4>
+            <input type="text" id="descricaoM" />
+            
+            
+            <div class="inputs2">
+              <div id="subInput">
+                <h4>Força</h4>
+                <input type="number" id="forca" />
+                <h4>Agilidade</h4>
+                <input type="number" id="agilidade" />
+              </div>
+              <div id="subInput">
+                <h4>Inteligencia</h4>
+                <input type="number" id="inteligencia" />
+                <h4>Reflexos</h4>
+                <input type="number" id="reflexos" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="character">
+          <div class="bars">
+            <h4>Vida</h4>
+            <div class="bar">
+              <div class="lifeBar" style="width: 0%">
+                <p class="barcount" id="lifeCount"></p>
+              </div>
+            </div>
+          
+  
+            <h4>Sanidade</h4>
+            <div class="sanity">
+              <div class="contentSanityBar">
+                <div class="sanityBar" style="width: 0%">
+                  <p class="barcount" id="sanityCount"></p>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+        
+        <button id="salvar">Salvar</button>
+        <button onclick="abrirModal()">Excluir Personagem</button>
+
+        <!-- Modal de confirmação -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Tem certeza que deseja excluir este personagem?</p>
+                <button onclick="confirmarExclusao()">Sim</button>
+                <button onclick="fecharModal()">Não</button>
+            </div>
+        </div>
+      </div>
+    </form>
+    <script src="detalhes.js"></script>
+  </body>
+</html>

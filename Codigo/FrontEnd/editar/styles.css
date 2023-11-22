@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #282828;
+    color: #fff;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    background-color: transparent !important;
+}
+
+hr {
+    border-top: 1px solid #a2a2a2;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+.detaials{
+    grid-area: detaials;
+}
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: left;
+}
+/* espaçamento dos titulos*/
+h1.title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+h2.grid-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'character character character character'
+        'details details details details'
+        'caixa caixa caixa caixa'
+        'sobre sobre sobre sobre';
+    grid-gap: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.border {
+    background-color: #a2a2a21b;
+    border-radius: 25px;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.details {
+    grid-area: details;
+    height: auto;
+}
+
+.character {
+    grid-area: character;
+    width: auto;
+}
+
+
+.trashcan {
+    color: white;
+    width: 15px;
+    font-size: 17px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+
+    margin-inline: 20px;
+}
+.inputs2{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    margin-inline: 20px;
+}
+
+.inputs2 h4{
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid#a2a2a2;
+
+    padding: 3px 4px;
+    margin-bottom: 10px;
+    background-color: #282828;
+    color: #fff;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+select {
+    border: none;
+    border-bottom: 2px solid#a2a2a2;
+
+    padding: 3px 4px;
+    margin-bottom: 10px;
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+select:focus {
+    outline: none;
+}
+
+
+.bars {
+    padding-top: 12px;
+}
+
+.bar {
+    width: 100%;
+    background-color: grey;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.barcount {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.contentSanityBar {
+    align-self: end;
+    width: 100%;
+    border-radius: 5px;
+    background-color: grey;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.sanity {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.sanityDice {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+}
+
+
+.bars .checkboxs label {
+    margin-right: 10px;
+}
+
+.lifeBar {
+    height: 25px;
+    background-color: #640101;
+    transition: width 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sanityBar {
+    width: 50%;
+    height: 25px;
+    background-color: #011b64;
+    border-radius: 5px;
+    transition: width 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.buttons button{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #5a5a5a;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.buttons button:hover{
+    background-color: #434343;
+    color: #c8c8c8;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0 0 0 / 80%);
+    transition: all 0.5s ease-in-out;
+}
+
+.formModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sobre{
+    grid-area: sobre;
+}
+.txtareadiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sobre #areas   {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#areas textarea{
+    resize: none;
+    background-color: #5a5a5a;
+    color: #fff;
+    padding: 5px;
+    margin-inline: 2%;
+    max-width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.modal-content {
+    border-radius: 15px;
+    text-align: center;
+    margin: 15% auto;
+    padding: 20px;
+    width: 20%;
+}
+
+.modal-content h2 {
+    font-size: 40px;
+}
+
+.modal-content p {
+    font-size: 30px;
+}
+
+.modal-content input {
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal-content input[type=submit] {
+    margin-top: 12px;
+    margin-bottom: 0px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 1px 20px 1px;
+}
+
+.detals {
+    width: 100%; 
+    height: 200;
+}
+.with-input .modal-content {
+    width: 40%;
+}
+#addWeapon{
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    margin-left: 90%;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 22px;
+    background: #282828;
+    border: 0.1px solid #a2a2a29d;
+    margin-right: 50px;
+}
+
+.with-input#addWeaponModal .modal-content {
+    width: 70%;
+}
+detai
+
+.modalDice {
+    height: 100px;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width: 1342px) {
+    .container {
+        width: 62%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .container {
+        width: 40%;
+    }
+}
+
+
+#subInput{
+    display: flex;
+    flex-direction: row;
+}
+#subInput input {
+    width: 30%;
+}
+@media screen and (max-width: 800px) {
+    #areas textarea{
+        resize: none;
+        background-color: #5a5a5a;
+        color: #fff;
+        padding: 5px;
+        margin-inline: 2%;
+        max-width: 150%;
+        height: 500px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    .sobre{
+        margin-left: 13%;
+        width: 70%;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+    
+        margin-inline: 20px;
+    }
+    .inputs2{
+        justify-content: center;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row;
+        margin-inline: 0px;
+    }
+    #subInput{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .inputs2 input {
+        width: 60% !important;
+    }
+    .inputs2 h4{
+        font-size: 15px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .character {
+        grid-area: character;
+        margin-left: 15%;
+        width: 70%;
+    }
+    .details {
+        grid-area: details;
+        margin-left: 13%;
+        width: 70%;
+    }
+   
+    .container {
+        display: grid;
+        justify-content: center;
+        grid-template-areas:
+            'character character  '
+            'details details  '
+            'attributes attributes  '
+            'combat combat  '
+            'sobre sobre ';
+        grid-gap: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+    .border {
+        background-color: #a2a2a21b;
+        border-radius: 25px;
+        padding: 0.5rem;
+        padding-bottom: 1rem;
+    }
+   
+    
+}

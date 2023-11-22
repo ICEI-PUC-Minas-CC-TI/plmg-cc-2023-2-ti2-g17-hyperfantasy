@@ -15,33 +15,31 @@ public class Personagem {
 	private Integer id;
 	@Column(name="nome",length=100,nullable=true)
 	private String nome;
-	@Column(name = "vidamax")
-	private int vidaMax;
-	@Column(name = "vidaatual")
-    private int vidaAtual;
-	@Column(name = "sanidadeatual")
-    private int sanidadeAtual;
-	@Column(name = "sanidademax")
-    private int sanidadeMax;
+	
     @Column(name="jogador",length=100,nullable=true)
     private String jogador;
+    
     private String ocupacao;
     private int nivel;
     private String sexo;
-    @Column(name = "localresidencia")
+    
+    @Column(name = "local_nascimento")
+    private String localNascimento;
+    
+    @Column(name = "local_residencia")
     private String localResidencia;
-    private String classe;
-    private String habilidades;
-    private int magia;
-    private int mana;
-    private String descricao;
+    
+    private String nomeC;
+    private String habilidadeC;
+    
+    private String nomeM;
+    private Integer manaM;
+
+    private String descricaoM;
     private int forca;
     private int agilidade;
     private int inteligencia;
     private int reflexos;
-    private String inventario;
-    private String aparencia;
-    private String historia;
     
 	public Integer getId() {
 		return id;
@@ -54,30 +52,6 @@ public class Personagem {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public int getVidaMax() {
-		return vidaMax;
-	}
-	public void setVidaMax(int vidaMax) {
-		this.vidaMax = vidaMax;
-	}
-	public int getVidaAtual() {
-		return vidaAtual;
-	}
-	public void setVidaAtual(int vidaAtual) {
-		this.vidaAtual = vidaAtual;
-	}
-	public int getSanidadeAtual() {
-		return sanidadeAtual;
-	}
-	public void setSanidadeAtual(int sanidadeAtual) {
-		this.sanidadeAtual = sanidadeAtual;
-	}
-	public int getSanidadeMax() {
-		return sanidadeMax;
-	}
-	public void setSanidadeMax(int sanidadeMax) {
-		this.sanidadeMax = sanidadeMax;
 	}
 	public String getJogador() {
 		return jogador;
@@ -103,41 +77,47 @@ public class Personagem {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+	public String getLocalNascimento() {
+		return localNascimento;
+	}
+	public void setLocalNascimento(String localNascimento) {
+		this.localNascimento = localNascimento;
+	}
 	public String getLocalResidencia() {
 		return localResidencia;
 	}
 	public void setLocalResidencia(String localResidencia) {
 		this.localResidencia = localResidencia;
 	}
-	public String getClasse() {
-		return classe;
+	public String getNomeC() {
+		return nomeC;
 	}
-	public void setClasse(String classe) {
-		this.classe = classe;
+	public void setNomeC(String nomeC) {
+		this.nomeC = nomeC;
 	}
-	public String getHabilidades() {
-		return habilidades;
+	public String getHabilidadeC() {
+		return habilidadeC;
 	}
-	public void setHabilidades(String habilidades) {
-		this.habilidades = habilidades;
+	public void setHabilidadeC(String habilidadeC) {
+		this.habilidadeC = habilidadeC;
 	}
-	public int getMagia() {
-		return magia;
+	public String getNomeM() {
+		return nomeM;
 	}
-	public void setMagia(int magia) {
-		this.magia = magia;
+	public void setNomeM(String nomeM) {
+		this.nomeM = nomeM;
 	}
-	public int getMana() {
-		return mana;
+	public Integer getManaM() {
+		return manaM;
 	}
-	public void setMana(int mana) {
-		this.mana = mana;
+	public void setManaM(Integer manaM) {
+		this.manaM = manaM;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getDescricaoM() {
+		return descricaoM;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricaoM(String descricaoM) {
+		this.descricaoM = descricaoM;
 	}
 	public int getForca() {
 		return forca;
@@ -163,24 +143,6 @@ public class Personagem {
 	public void setReflexos(int reflexos) {
 		this.reflexos = reflexos;
 	}
-	public String getInventario() {
-		return inventario;
-	}
-	public void setInventario(String inventario) {
-		this.inventario = inventario;
-	}
-	public String getAparencia() {
-		return aparencia;
-	}
-	public void setAparencia(String aparencia) {
-		this.aparencia = aparencia;
-	}
-	public String getHistoria() {
-		return historia;
-	}
-	public void setHistoria(String historia) {
-		this.historia = historia;
-	}
-	
 }
+
 

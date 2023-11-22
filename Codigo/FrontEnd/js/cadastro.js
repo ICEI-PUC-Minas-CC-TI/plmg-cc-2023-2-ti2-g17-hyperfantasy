@@ -4,7 +4,7 @@ const Isenha = document.querySelector(".senha");
 const IconfirmarSenha = document.querySelector(".confirmar-senha"); // Adicione o seletor correto para o campo de confirmação de senha
 
 function limpar() {
-  Iusername.value = "";
+  
   Isenha.value = "";
   IconfirmarSenha.value = "";
 }
@@ -16,9 +16,14 @@ function cadastrar() {
   if (senha !== confirmarSenha) {
     document.getElementById('mensagemErro').style.display = 'block';
     
-  } else {
+  } 
+  if (senha.length < 4) {
+    document.getElementById('mensagemErroComprimento').style.display = 'block';
+    return; // Não continue o cadastro se a senha for muito curta
+  }
+else {
     document.getElementById('mensagemErro').style.display = 'none';
-    fetch("http://localhost:8080/usuarios", {
+    fetch("http://localhost:8081/usuarios", {
       method: "POST",
       headers: {
         'Accept': 'application/json',
@@ -36,7 +41,7 @@ function cadastrar() {
       } else if (res.status === 409) { 
         document.getElementById('mensagemErroU').style.display = 'block';
         return res.text().then(function (errorText) {
-          
+          Iusername.value = "";
           throw new Error('Nome de usuário indisponível');
         });
       } else {
