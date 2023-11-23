@@ -1,5 +1,7 @@
 package ti2.cadastro.controller;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,12 +53,39 @@ public class UsuarioController  {
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(usuario);
 	    }
 	}
+	
+	 public static String calcularMD5(String input) {
+	        try {
+	            MessageDigest md = MessageDigest.getInstance("MD5");
+	            byte[] messageDigest = md.digest(input.getBytes());
+
+	            // Converter o array de bytes em representação hexadecimal
+	            StringBuilder hexString = new StringBuilder();
+	            for (byte b : messageDigest) {
+	                String hex = Integer.toHexString(0xFF & b);
+	                if (hex.length() == 1) {
+	                    hexString.append('0');
+	                }
+	                hexString.append(hex);
+	            }
+
+	            return hexString.toString();
+	        } catch (NoSuchAlgorithmException e) {
+	            // Lidar com exceções, se necessário
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
+	
 	@PostMapping
 	public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario){
+		
 		if(usuarioJaExiste(usuario.getUsername())){
 			 return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
 		}
 		else {
+			String senhaMD5 = calcularMD5(usuario.getSenha());
+            usuario.setSenha(senhaMD5);
 			Usuario usuarioNovo=dao.save(usuario);
 			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioNovo);
 		}
@@ -75,8 +104,9 @@ public class UsuarioController  {
 	private boolean autenticar(Usuario usuario) {
 		boolean sucesso=false;
 	    List<Usuario> aux=listaUsuarios();
+	    String senhaDigitada = calcularMD5(usuario.getSenha());
 	    for(int i=0;i<aux.size();i++) {
-	    	if(aux.get(i).getUsername().equals(usuario.getUsername())&&aux.get(i).getSenha().equals(usuario.getSenha())) {
+	    	if(aux.get(i).getUsername().equals(usuario.getUsername())&&aux.get(i).getSenha().equals(senhaDigitada)) {
 	    		sucesso=true;
 	    		break;
 	    	}

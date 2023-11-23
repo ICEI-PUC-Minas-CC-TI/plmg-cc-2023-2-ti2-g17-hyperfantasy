@@ -16,9 +16,8 @@ body {
 }
 .logo img {
  margin-left: 50%;
-  height: 60px; /* Ajuste a altura da imagem conforme necessário */
+  height: 60px; 
 }
-
 
 .container {
   display: flex;
@@ -62,7 +61,6 @@ h1{
   border-radius: 0;
   
 }
-
 .label-float{
   position: relative;
   padding-top: 13px;

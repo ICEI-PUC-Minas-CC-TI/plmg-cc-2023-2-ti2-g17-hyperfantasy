@@ -1,8 +1,6 @@
 const formulario = document.querySelector("form");
 const Iusername = document.querySelector(".username");
 const Isenha = document.querySelector(".senha");
-
-
 function limpar() {
   Iusername.value = "";
   Isenha.value = "";
@@ -40,7 +38,6 @@ function login() {
       console.error('Erro ao fazer login', error);
     });
 }
-
 formulario.addEventListener('submit', function (event) {
   event.preventDefault();
   login();

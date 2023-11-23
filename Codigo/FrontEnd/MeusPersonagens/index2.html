@@ -7,12 +7,11 @@
   <script src="meusP.js"></script>
   <link href="meusP.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
   <header>
     <ul id="menuItens" class="menuItens">
       <img id="logo" src="/images/dado.png" alt="Logo do site" />
-      <li><a class="active" href="/home/index1.html" data-item="Home">Home</a></li>
+      <li><a class="active" href="/home/index3.html" data-item="Home">Home</a></li>
       <li><a href="/ficha/" data-item="Criar">Criar Personagem</a></li>
       <li><a href="/MeusPersonagens/index2.html" data-item="Meus">Meus Personagens</a></li>
       <li><a href="/home/sobre.html" data-item="Jogos">Sobre Nós</a></li>
@@ -29,7 +28,6 @@
   <h1 id="meus">Detalhes da conta</h1>
   <div class="account-box">
     <p>Username:  <span id="nomeDeUsuario"class="grifado"></span></p>
-   
     <div class="account-details">
       <button id="alterarSenhaBtn"style="display: block;">Alterar Senha</button>
       <button id="deletarContaBtn">Deletar conta</button>
@@ -38,13 +36,11 @@
           <label for="novaSenha">Nova Senha:</label>
           <input type="password" id="novaSenha" name="novaSenha">
           <button id="salvarSenhaBtn">Salvar Senha</button>
-         
         </form>
       </div>
     </div>
     <div id="mensagem" style="color: rgb(185, 255, 193); display: none;">Senha alterada com sucesso!</div>
     <div id="deletarContaForm" style="display: none;">
-      
       <form>
         <label for="confimarSenha">Digite sua senha:</label>
         <input type="password" class="confirmarSenha">
@@ -52,15 +48,11 @@
         <div id="mensagemSenhaIncorreta" style="color: rgb(255, 193, 185); display: none;">Senha incorreta!</div>
       </form>
     </div>
-    
-
   </div>
-   
   </div>
   <br/><br/>
     <h1 id="meus">Personagens Vinculados</h1>
+    <br/><br/>
     <div id="personagens-container"></div>
-  
 </body>
-
 </html>

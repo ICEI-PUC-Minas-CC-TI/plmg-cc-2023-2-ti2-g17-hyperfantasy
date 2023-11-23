@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  
   const deletarContaBtn = document.getElementById("deletarContaBtn");
   const deletarContaForm = document.getElementById("deletarContaForm");
   const confirmarBtn = document.getElementById("confirmarBtn");
@@ -43,10 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   })
   .then(function (data) {
-    // Se a validação for bem-sucedida, faça a solicitação de exclusão.
-    const usernameToDelete = data.username; // Certifique-se de ajustar conforme a estrutura do seu objeto de resposta.
+    const usernameToDelete = data.username; 
     console.log(usernameToDelete);
-    // Use encodeURI para garantir que o username seja corretamente formatado na URL.
+
     const deleteUrl = `http://localhost:8081/usuarios/excluir/${encodeURI(usernameToDelete)}`;
 
     return fetch(deleteUrl, {
@@ -54,9 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        // Inclua quaisquer cabeçalhos adicionais necessários para a solicitação de exclusão.
       },
-      // Não é necessário enviar um corpo (body) para uma solicitação de exclusão baseada na URL.
+   
     });
   })
   .then(function (deleteRes) {
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const salvarSenhaBtn = document.getElementById("salvarSenhaBtn");
   nomeDeUsuarioElement.textContent = username;
 
-  //botao de alterar senha clicado 
   alterarSenhaBtn.addEventListener("click", function() {
     alterarSenhaForm.style.display = "block";
     deletarContaBtn.style.display = 'none';
@@ -124,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
-
 //PARTE REFERENTE A EXIBIÇAO DE PERSONAGENS
 function listarPersonagens(username) {
   const url = `http://localhost:8080/personagem/${username}`;
@@ -133,20 +128,32 @@ function listarPersonagens(username) {
     .then(response => response.json())
     .then(data => {
       const personagensContainer = document.getElementById('personagens-container');
-
       if (data.length > 0) {
         data.forEach(personagem => {
           const anchor = document.createElement('a');
+          anchor.style.display = 'block';
+          anchor.style.padding = '20px';
+          anchor.style.backgroundColor = ' #bebebe';
+          anchor.style.textDecoration = 'none';
+          anchor.style.color = 'none';
+          anchor.style.border = '1px solid #ccc';
+          anchor.style.borderRadius = '5px';
+          anchor.style.transition = 'background-color 0.3s';
+          anchor.style.width = '200px';
+          anchor.style.marginBottom = '20px';
           anchor.classList.add('personagem-link');
           anchor.href = `detalhesPersonagem.html?id=${personagem.id}`;
-          anchor.textContent = `Ver detalhes do ${personagem.nome}`;
-
-          // Adicione um evento de clique à âncora
+          anchor.textContent = `${personagem.nome}`;
           anchor.addEventListener('click', function (event) {
-            event.preventDefault(); // Impede o comportamento padrão do link (não seguir o href imediatamente)
-            window.location.href = anchor.href; // Redireciona para o href da âncora
+            event.preventDefault(); 
+            window.location.href = anchor.href; 
           });
-
+          anchor.addEventListener('mouseover', () => {
+            anchor.style.backgroundColor = '#e0e0e0';
+          });
+          anchor.addEventListener('mouseout', () => {
+            anchor.style.backgroundColor = '#f0f0f0';
+          });
           personagensContainer.appendChild(anchor);
         });
       } else {
@@ -159,13 +166,11 @@ function listarPersonagens(username) {
 }
 function excluirPersonagem(personagemId) {
   const url = `http://localhost:8080/personagem/excluir/${personagemId}`;
-
   fetch(url, {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // Inclua quaisquer cabeçalhos adicionais necessários para a solicitação de exclusão.
     },
   })
     .then(response => {
@@ -181,7 +186,6 @@ function excluirPersonagem(personagemId) {
       console.error('Erro ao fazer solicitação de exclusão:', error);
     });
 }
-
 function editarPersonagem(personagemId) {
   window.location.href = 'MeusPersonagens/index2.html'
   const url = `http://localhost:8080/personagem/excluir/${personagemId}`;
@@ -191,7 +195,6 @@ function editarPersonagem(personagemId) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      // Inclua quaisquer cabeçalhos adicionais necessários para a solicitação de exclusão.
     },
   })
     .then(response => {
@@ -207,8 +210,4 @@ function editarPersonagem(personagemId) {
       console.error('Erro ao fazer solicitação de exclusão:', error);
     });
 }
-
-
-
-
 listarPersonagens(localStorage.getItem('username'));

@@ -28,20 +28,20 @@ html {
 #alterarSenhaBtn,
 #deletarContaBtn {
   display: block;
-  margin: 10px; /* Adicione margem para espaçamento entre os botões */
-  padding: 10px 20px; /* Adicione preenchimento interno para uma aparência mais agradável */
-  font-size: 16px; /* Tamanho da fonte */
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px; 
   cursor: pointer;
-  background-color: #bebebe; /* Cor de fundo verde (exemplo) */
-  color: #ffffff; /* Cor do texto branco (exemplo) */
+  background-color: #bebebe; 
+  color: #ffffff; 
   border: none;
-  border-radius: 5px; /* Borda arredondada */
-  transition: background-color 0.3s; /* Efeito de transição na mudança de cor de fundo */
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
 }
 
 #alterarSenhaBtn:hover,
 #deletarContaBtn:hover {
-  background-color: #747474; /* Cor de fundo verde mais escura ao passar o mouse (exemplo) */
+  background-color: #747474; 
 }
 .personagem-container {
   justify-content: center;
@@ -49,7 +49,7 @@ html {
   border: 1px solid #ccc;
   margin: 10px;
   padding: 10px;
-  width: 200px; /* Ajuste conforme necessário */
+  width: 200px;
 }
 
 .personagem-atributo {
@@ -76,7 +76,8 @@ html {
 
 #nomeDeUsuario {
   font-weight: bold;
-  color: #ffffff; /* ou a cor desejada */
+  color: #ffffff; 
+  font-size:larger;
 }
 
 #mobile {
@@ -94,7 +95,7 @@ h5
   justify-content: center;
   border-top: 5%;
 }
-/* Barra principal*/
+
 header {
   background-color: #420000;
   color: #fff;
@@ -227,7 +228,6 @@ header {
   width: auto;
 }
 
-/* Estilo para o texto abaixo do vídeo */
 #texto2 h5 {
   margin-left: 2%;
   margin-right: 2%;
@@ -237,7 +237,6 @@ header {
   margin-top: 20px;
 }
 
-/* Estilo para o texto abaixo do vídeo */
 #texto2 h4 {
   margin-left: 2%;
   margin-right: 2%;
@@ -331,7 +330,7 @@ header {
   text-align: center;
 }
 
-/* Definição da fonte e tamanho */
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -339,7 +338,7 @@ body {
   background: linear-gradient(90deg, #464646 0%, #282828 100%);
 }
 
-/* Estilo para o título da seção */
+
 #Temadasemana h1 {
   font-size: 32px;
   font-weight: bold;
@@ -347,7 +346,7 @@ body {
   margin-top: 50px;
 }
 
-/* Estilo para o subtítulo da seção */
+
 #Temadasemana h2 {
   font-size: 24px;
   font-weight: normal;
@@ -355,7 +354,7 @@ body {
   margin-top: 20px;
 }
 
-/* Estilo para a seção de vídeo */
+
 #video {
   margin-top: 50px;
 }
@@ -368,7 +367,7 @@ body {
   margin-bottom: 2%;
 }
 
-/* Estilo para o contêiner do vídeo */
+
 .yt {
   display: flex;
   flex-direction: column;
@@ -376,7 +375,7 @@ body {
   justify-content: center;
 }
 
-/* Estilo para o título do vídeo */
+
 .yt h3 {
   font-size: 20px;
   font-weight: bold;
@@ -384,12 +383,10 @@ body {
   margin-top: 20px;
 }
 
-/* Estilo para o vídeo */
 .yt iframe {
   margin-top: 20px;
 }
 
-/* Estilo para o texto abaixo do vídeo */
 .yt h5 {
   font-size: 18px;
   font-weight: normal;
@@ -397,14 +394,12 @@ body {
   margin-top: 20px;
 }
 
-/* Estilo para os subtítulos das tecnologias */
 .yt h4 {
   font-size: 20px;
   font-weight: bold;
   margin-top: 40px;
 }
 
-/* Estilo para os textos das tecnologias */
 .yt h5 {
   font-size: 18px;
   font-weight: normal;
@@ -412,7 +407,6 @@ body {
   margin-top: 20px;
 }
 
-/* Estilo para as imagens das tecnologias */
 .yt img {
   display: block;
   margin: 0 auto;
@@ -668,5 +662,5 @@ body {
     width: 300px;
     text-align: justify;
   }
-  
+ 
 }

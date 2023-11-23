@@ -1,25 +1,23 @@
 const formulario = document.querySelector("form");
 const Iusername = document.querySelector(".username");
 const Isenha = document.querySelector(".senha");
-const IconfirmarSenha = document.querySelector(".confirmar-senha"); // Adicione o seletor correto para o campo de confirmação de senha
+const IconfirmarSenha = document.querySelector(".confirmar-senha"); 
 
 function limpar() {
-  
   Isenha.value = "";
   IconfirmarSenha.value = "";
 }
-
 function cadastrar() {
   const senha = Isenha.value;
   const confirmarSenha = IconfirmarSenha.value;
 
   if (senha !== confirmarSenha) {
     document.getElementById('mensagemErro').style.display = 'block';
-    
+    return;
   } 
   if (senha.length < 4) {
     document.getElementById('mensagemErroComprimento').style.display = 'block';
-    return; // Não continue o cadastro se a senha for muito curta
+    return; 
   }
 else {
     document.getElementById('mensagemErro').style.display = 'none';
@@ -50,7 +48,6 @@ else {
     })
     .then(function (data) {
       console.log('Usuário cadastrado com sucesso', data);
-      // Limpar os campos após o cadastro
       Iusername.value = '';
       Isenha.value = '';
       IconfirmarSenha.value = '';
@@ -61,10 +58,8 @@ else {
     });
   }
 }
-
 formulario.addEventListener('submit', function (event) {
   event.preventDefault();
-  cadastrar();
   limpar();
   document.getElementById('mensagemErroU').style.display = 'none';
   
