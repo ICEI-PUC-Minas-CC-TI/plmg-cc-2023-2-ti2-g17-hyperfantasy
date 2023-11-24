@@ -152,7 +152,7 @@ function preencherFormulario(personagem) {
       'lNascimento': personagem.localNascimento,
       'lResidencia': personagem.localResidencia,
       'nomeC': personagem.nomeC,
-      'habilidade': personagem.habilidadesC,
+      'habilidade': personagem.habilidadeC,
       'nomeM': personagem.nomeM,
       'mana': personagem.manaM,
       'descricaoM': personagem.descricaoM,

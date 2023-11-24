@@ -58,7 +58,6 @@ INDEX VERSION 1.134+C:\Users\ACER\OneDrive\Documentos\CURSO\plmg-cc-2023-2-ti2-g
 1972112306.index
 4170516596.index
 6444191.index
-3700161847.index
 4232886709.index
 3667627487.index
 577364648.index
@@ -86,7 +85,6 @@ INDEX VERSION 1.134+C:\Users\ACER\OneDrive\Documentos\CURSO\plmg-cc-2023-2-ti2-g
 3745364054.index
 365935463.index
 583376356.index
-2795787554.index
 1240777879.index
 3085666338.index
 1971915166.index

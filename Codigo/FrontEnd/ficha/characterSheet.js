@@ -34,7 +34,6 @@ const Ireflexos = document.querySelector(".reflexos");
       Iinteligencia.value === "" ||
       Ireflexos.value === ""
     ) {
-      
       alert('Preencha todos os campos obrigatórios');
       return;
     }
