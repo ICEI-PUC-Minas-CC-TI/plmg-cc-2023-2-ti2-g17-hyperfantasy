@@ -16,4 +16,20 @@ O projeto HyperFantasy é um webapp voltado principalmente para o desenvolviment
 
 ## Instruções de utilização
 
-[Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.]
+Requisitos Prévios:
+Java Development Kit (JDK) instalado.
+PostgreSQL instalado localmente.
+Passos:
+Clone o Repositório:
+
+Clone o repositório do seu projeto Spring Boot a partir do Git:
+
+bash
+Copy code
+git clone https://github.com/seu-usuario/seu-projeto.git
+Configuração do Banco de Dados:
+
+Certifique-se de que o PostgreSQL está instalado e em execução localmente.
+Crie um banco de dados no PostgreSQL para o seu aplicativo e o configure
+
+Explore as funcionalidades do site, como cadastro, login.
