@@ -124,6 +124,8 @@ public class UsuarioController  {
 	        }
 	    }
 	    if (dao.existsById(id)) {
+	    	String senhaMD5 = calcularMD5(usuarioAtualizado.getSenha());
+            usuarioAtualizado.setSenha(senhaMD5);
 	        usuarioAtualizado.setId(id);
 	        Usuario usuarioAtualizadoEntity = dao.save(usuarioAtualizado);
 	        return ResponseEntity.ok(usuarioAtualizadoEntity);
@@ -134,7 +136,7 @@ public class UsuarioController  {
 	
 	@DeleteMapping("/excluir/{username}")
 	public ResponseEntity<Void> deletarUsuario(@PathVariable String username) {
-	    
+		
 	    Optional<Usuario> usuarioOptional = dao.findByUsername(username);
 
 	    if (usuarioOptional.isPresent()) {
