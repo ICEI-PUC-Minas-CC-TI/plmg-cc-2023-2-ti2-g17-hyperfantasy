@@ -2,8 +2,8 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: HyperFantasy
 authors:
-  - family-names: Vítor de Freitas Scarlatelli
-    given-names: João
+  - family-names: de Freitas Scarlatelli
+    given-names: João Vítor
   - family-names: Caetano Costa
     given-names: Laura
   - family-names: Ferraz de Moraes
